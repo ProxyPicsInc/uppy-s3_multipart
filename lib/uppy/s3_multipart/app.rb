@@ -102,9 +102,10 @@ module Uppy
             key   = param!("key")
             parts = param!("parts")
 
-            puts "------------------"
-            puts parts
-            puts "------------------"
+            parts = parts.map do |part|
+              part = part.with_indifferent_access
+              { part_number: part[:part_number], etag: part[:etag] }
+            end
 
             client_call(:complete_multipart_upload, upload_id: upload_id, key: key, parts: parts)
 

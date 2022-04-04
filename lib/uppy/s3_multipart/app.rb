@@ -102,8 +102,15 @@ module Uppy
             key   = param!("key")
             parts = param!("parts")
 
+            puts "------------------"
+            puts parts
+            puts "------------------"
+
             parts = parts.map do |part|
               part = part.with_indifferent_access
+              puts "--------ppp--------"
+              puts part
+              puts "--------ppp-------"
               { part_number: part['PartNumber'], etag: part['ETag'] }
             end
 

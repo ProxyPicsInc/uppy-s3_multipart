@@ -104,11 +104,7 @@ module Uppy
 
             parts = parts.map do |part|
               part = part.with_indifferent_access
-              begin
-                { part_number: part.fetch("PartNumber"), etag: part.fetch("ETag") }
-              rescue KeyError
-                error! "At least one part is missing \"PartNumber\" or \"ETag\" field"
-              end
+              { part_number: part['PartNumber'], etag: part['ETag'] }
             end
 
             client_call(:complete_multipart_upload, upload_id: upload_id, key: key, parts: parts)

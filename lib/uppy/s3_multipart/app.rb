@@ -104,6 +104,7 @@ module Uppy
 
             parts = parts.map do |part|
               part = part.with_indifferent_access
+              byebug
               begin
                 { part_number: part.fetch("PartNumber"), etag: part.fetch("ETag") }
               rescue KeyError

@@ -103,6 +103,7 @@ module Uppy
             parts = param!("parts")
 
             parts = parts.map do |part|
+              part = part.with_indifferent_access
               begin
                 { part_number: part.fetch("PartNumber"), etag: part.fetch("ETag") }
               rescue KeyError

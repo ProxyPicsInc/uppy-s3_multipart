@@ -106,14 +106,6 @@ module Uppy
             puts parts
             puts "------------------"
 
-            parts = parts.map do |part|
-              part = part.with_indifferent_access
-              puts "--------ppp--------"
-              puts part
-              puts "--------ppp-------"
-              { part_number: part['PartNumber'], etag: part['ETag'] }
-            end
-
             client_call(:complete_multipart_upload, upload_id: upload_id, key: key, parts: parts)
 
             object_url = client_call(:object_url, key: key, public: opts[:public])

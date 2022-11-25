@@ -14,7 +14,7 @@ Gem::Specification.new do |gem|
   gem.require_path = "lib"
 
   gem.add_dependency "roda", ">= 2.27", "< 4"
-  gem.add_dependency "aws-sdk-s3", "~> 1.0"
+  gem.add_dependency "aws-sdk-s3", "~> 1.117.1"
   gem.add_dependency "content_disposition", "~> 1.0"
 
   gem.add_development_dependency "rake"
@@ -22,6 +22,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "rack-test_app"
   gem.add_development_dependency "shrine", "~> 2.13"
   gem.add_development_dependency "shrine-memory"
-  gem.add_development_dependency "aws-sdk-core", "~> 3.23"
+  gem.add_development_dependency "aws-sdk-core", "~> 3.168.1"
   gem.add_development_dependency "rexml"
 end
